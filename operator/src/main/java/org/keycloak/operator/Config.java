@@ -19,8 +19,6 @@ package org.keycloak.operator;
 
 import io.smallrye.config.ConfigMapping;
 
-import java.util.Optional;
-
 /**
  * @author Vaclav Muzikar <vmuzikar@redhat.com>
  */

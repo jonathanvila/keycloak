@@ -24,6 +24,8 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.UUID;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public abstract class ClusterOperatorTest {
 
   public static final String QUARKUS_KUBERNETES_DEPLOYMENT_TARGET = "quarkus.kubernetes.deployment-target";
@@ -130,11 +132,11 @@ public abstract class ClusterOperatorTest {
       // create a new client bc operator has closed the old one
       createK8sClient();
     } else {
-      //cleanRBACresourcesAndOperatorDeployment();
+      cleanRBACresourcesAndOperatorDeployment();
     }
 
     Log.info("Deleting namespace : " + namespace);
-    //assertThat(k8sclient.namespaces().withName(namespace).delete()).isTrue();
+    assertThat(k8sclient.namespaces().withName(namespace).delete()).isTrue();
     k8sclient.close();
   }
 }
