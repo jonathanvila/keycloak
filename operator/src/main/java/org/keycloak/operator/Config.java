@@ -19,12 +19,15 @@ package org.keycloak.operator;
 
 import io.smallrye.config.ConfigMapping;
 
+import java.util.Optional;
+
 /**
  * @author Vaclav Muzikar <vmuzikar@redhat.com>
  */
 @ConfigMapping(prefix = "operator")
 public interface Config {
     Keycloak keycloak();
+    Optional<String> deployment();
 
     interface Keycloak {
         String image();
