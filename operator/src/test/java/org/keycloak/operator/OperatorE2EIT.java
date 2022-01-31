@@ -1,11 +1,9 @@
 package org.keycloak.operator;
 
-import io.fabric8.kubernetes.client.KubernetesClientException;
 import io.quarkus.logging.Log;
 import io.quarkus.test.junit.QuarkusTest;
 import org.awaitility.Awaitility;
 import org.awaitility.core.ConditionTimeoutException;
-import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -15,8 +13,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
 public class OperatorE2EIT extends ClusterOperatorTest {
-    @ConfigProperty
-
     @Test
     public void given_ClusterAndOperatorRunning_when_KeycloakCRCreated_Then_KeycloakStructureIsDeployedAndStatusIsOK() throws IOException {
         Log.info(((operatorDeployment == OperatorDeployment.remote) ? "Remote " : "Local ") + "Run Test :" + namespace);

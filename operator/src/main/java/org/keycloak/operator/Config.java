@@ -27,7 +27,6 @@ import java.util.Optional;
 @ConfigMapping(prefix = "operator")
 public interface Config {
     Keycloak keycloak();
-    Optional<String> deployment();
 
     interface Keycloak {
         String image();

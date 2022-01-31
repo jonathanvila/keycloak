@@ -24,12 +24,10 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.UUID;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public abstract class ClusterOperatorTest {
 
   public static final String QUARKUS_KUBERNETES_DEPLOYMENT_TARGET = "quarkus.kubernetes.deployment-target";
-  public static final String OPERATOR_DEPLOYMENT_PROP = "operator.deployment";
+  public static final String OPERATOR_DEPLOYMENT_PROP = "test.operator.deployment";
   public static final String TARGET_KUBERNETES_GENERATED_YML_FOLDER = "target/kubernetes/";
 
   public enum OperatorDeployment {local,remote}
